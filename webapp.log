@@ -1,0 +1,172 @@
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.0.102:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:23:17] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:23:18] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:root:Article 2020 CNCF Annual Report is retrieved!
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:23:22] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:23:22] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:root:Article Kubernetes v1.20 Release Notes is retrieved!
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:23:31] "GET /3 HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:23:31] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:23:59] "[33mGET /11 HTTP/1.1[0m" 404 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:23:59] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\app.py", line 36, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:37:22] "[35m[1mGET / HTTP/1.1[0m" 500 -
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\app.py", line 36, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:37:29] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:root:Health status is OK
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:37:57] "GET /healthz HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.0.102:3111/ (Press CTRL+C to quit)
+INFO:root:Health status is OK
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:39:29] "GET /healthz HTTP/1.1" 200 -
+INFO:root:Health status is OK
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:39:30] "GET /healthz HTTP/1.1" 200 -
+INFO:root:Health status is OK
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:40:02] "GET /healthz HTTP/1.1" 200 -
+INFO:root:Health status is OK
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:40:03] "GET /healthz HTTP/1.1" 200 -
+INFO:root:Health status is OK
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:40:03] "GET /healthz HTTP/1.1" 200 -
+INFO:root:Health status is OK
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:40:03] "GET /healthz HTTP/1.1" 200 -
+INFO:root:Health status is OK
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:40:34] "GET /healthz HTTP/1.1" 200 -
+INFO:root:Health status is OK
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:40:36] "GET /healthz HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.0.102:3111/ (Press CTRL+C to quit)
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\app.py", line 36, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:52:53] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:root:Health status is OK
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:53:24] "GET /healthz HTTP/1.1" 200 -
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\app.py", line 36, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 16:54:03] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:root:Health status is OK
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 17:13:36] "GET /healthz HTTP/1.1" 200 -
+INFO:root:Health status is OK
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 17:14:41] "GET /healthz HTTP/1.1" 200 -
+INFO:root:Health status is OK
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 17:14:42] "GET /healthz HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.0.102:3111/ (Press CTRL+C to quit)
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\app.py", line 36, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 17:45:15] "[35m[1mGET / HTTP/1.1[0m" 500 -
+ERROR:app:Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\tech\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\Asus\Desktop\Project-4\nd064_course_1\project\techtrends\app.py", line 36, in index
+    posts = connection.execute('SELECT * FROM posts').fetchall()
+sqlite3.OperationalError: no such table: posts
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 17:45:24] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:root:ERROR - Unhealthy
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 17:45:30] "[35m[1mGET /healthz HTTP/1.1[0m" 500 -
+INFO:root:OK - Healthy
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 17:46:34] "[35m[1mGET /healthz HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2022 18:20:50] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2022 18:20:50] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2022 18:20:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:root:Article 2020 CNCF Annual Report is retrieved!
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2022 18:20:55] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2022 18:20:55] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.0.102:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:27:12] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:27:12] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:root:Article 2020 CNCF Annual Report is retrieved!
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:27:14] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:27:14] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:27:26] "GET /metrics HTTP/1.1" 200 -
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://192.168.0.102:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:28:42] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:28:54] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:28:54] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:28:56] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:28:56] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:root: New article created with title test
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:29:02] "[32mPOST /create HTTP/1.1[0m" 302 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:29:02] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:29:02] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:29:13] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:29:25] "[33mGET /10 HTTP/1.1[0m" 404 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:29:25] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:30:14] "[33mGET /one HTTP/1.1[0m" 404 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:31:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:31:43] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+INFO:root:About Us retrieved
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:31:45] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:31:45] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
