@@ -90,11 +90,20 @@ def create():
 
 @app.route('/healthz')
 def status():
-    response = app.response_class(
-        response=json.dumps({"result": "OK - healthy"}),
-        status=200,
-        mimetype='application/json'
-    )
+     """
+    return app status.
+    """
+    conn = get_db_connection()
+    try:
+        conn.execute("SELECT * FROM posts")
+        response = app.response_class(response=json.dumps({"result": "OK - Healthy"}), status=500,
+                                      mimetype='application/json')
+        logging.info("OK - Healthy")
+
+    except sqlite3.OperationalError:
+        response = app.response_class(response=json.dumps({"result": "ERROR - unhealthy"}), status=500,
+                                      mimetype='application/json')
+        logging.info("ERROR - Unhealthy")
     return response
 
 @app.route('/metrics')
