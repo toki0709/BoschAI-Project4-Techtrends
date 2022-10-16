@@ -1,4 +1,5 @@
 import logging
+import sys
 import sqlite3
 from urllib import response
 
@@ -9,8 +10,6 @@ from werkzeug.exceptions import abort
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your secret key'
 
-# Capture any logs at the DEBUG level
-logging.basicConfig(level=logging.DEBUG)
 
 db_connection_count = 0
 
@@ -19,6 +18,7 @@ db_connection_count = 0
 
 
 def get_db_connection():
+    """This function connects to database with the name database.db."""
     global db_connection_count
 
     connection = sqlite3.connect('database.db')
@@ -32,7 +32,7 @@ def get_db_connection():
 def get_post(post_id):
     connection = get_db_connection()
     post = connection.execute('SELECT * FROM posts WHERE id = ?',
-                        (post_id,)).fetchone()
+                              (post_id,)).fetchone()
     connection.close()
 
     if post is not None:
@@ -42,12 +42,6 @@ def get_post(post_id):
 
     return post
 
-
-def _get_count():
-    connection = get_db_connection()
-    count = connection.execute('SELECT count(*) as cnt FROM posts').fetchone()
-    connection.close()
-    return count['cnt']
 
 # Define the main route of the web application
 
@@ -67,9 +61,9 @@ def index():
 def post(post_id):
     post = get_post(post_id)
     if post is None:
-      return render_template('404.html'), 404
+        return render_template('404.html'), 404
     else:
-      return render_template('post.html', post=post)
+        return render_template('post.html', post=post)
 
 # Define the About Us page
 
@@ -93,7 +87,7 @@ def create():
         else:
             connection = get_db_connection()
             connection.execute('INSERT INTO posts (title, content) VALUES (?, ?)',
-                         (title, content))
+                               (title, content))
             connection.commit()
             connection.close()
             logging.info(f" New article created with title {title}")
@@ -107,7 +101,7 @@ def status():
     return app status.
     """
     conn = get_db_connection()
-    
+
     try:
         conn.execute("SELECT * FROM posts")
         response = app.response_class(response=json.dumps({"result": "OK - Healthy"}), status=500,
@@ -118,8 +112,9 @@ def status():
         response = app.response_class(response=json.dumps({"result": "ERROR - unhealthy"}), status=500,
                                       mimetype='application/json')
         logging.info("ERROR - Unhealthy")
-    
+
     return response
+
 
 @app.route('/metrics')
 def metrics():
@@ -133,6 +128,20 @@ def metrics():
                             "post": n_post}, "db_connection_count": db_connection_count}),
         status=200, mimetype='application/json')
 
+
 # start the application on port 3111
 if __name__ == "__main__":
-   app.run(host='0.0.0.0', port='3111')
+    # Set logger to handle STDOUT and STDERR
+    stdout_handler = logging.StreamHandler(sys.stdout)
+    stderr_handler = logging.StreamHandler(sys.stderr)
+    handlers = [stderr_handler, stdout_handler]
+    format_output = '%(levelname)s:%(name)s:%(asctime)s, %(message)s'
+
+    # Capture any logs at the DEBUG level
+    logging.basicConfig(level=logging.DEBUG,
+                        format=format_output,
+                        datefmt='%m-%d-%Y, %H:%M:%S',
+                        handlers=handlers)
+
+    # Run the app
+    app.run(host='0.0.0.0', port='3111')
