@@ -19,7 +19,7 @@ spec:
         app: techtrends
     spec:
       containers:
-      - image: barbietunnie/techtrends:latest
+      - image: toki0709/techtrends:latest
         name: techtrends
         ports:
           - containerPort: 3111
