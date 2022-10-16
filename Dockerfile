@@ -1,7 +1,7 @@
 # Set the base image
 FROM python:3.8-slim-buster
 
-LABEL mainitainer="Babatunde Adeyemi"
+LABEL mainitainer="Toki Tazwar"
 
 COPY ./techtrends /app
 WORKDIR /app
