@@ -12,6 +12,6 @@ spec:
     helm:
       valueFiles:
         - values-staging.yaml
-    path: project/helm
+    path: helm
     repoURL: https://github.com/toki0709/BoschAIND-Techtrends.git
     targetRevision: HEAD
