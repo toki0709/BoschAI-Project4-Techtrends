@@ -1,42 +1,47 @@
 ## Docker commands used to build the application 
 # TODO: insert the docker build command
-docker build -t techtrends:v1.0 .
+docker build -t techtrends .
+
 ## Docker commands used to run the application
 # TODO: insert the docker run command
-docker run -n myapp -it --rm -p 7111:3111 -d techtrends
+docker run --name myapp -it --rm -p 7111:3111 -d techtrends
+
 ## Docker commands used to get the application logs
+
 # TODO: insert the docker logs command
-docker logs ebe6735a46bf06365e359931b91e1917d69504c18e8c6a20b9ad9450a420f455 -f
+docker logs myapp -f
+
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
-
-WARNING:werkzeug: * Running on all addresses.
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
-INFO:werkzeug: * Running on http://192.168.0.102:3111/ (Press CTRL+C to quit)
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:27:12] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:27:12] "GET /static/css/main.css HTTP/1.1" 304 -
-INFO:root:Article 2020 CNCF Annual Report is retrieved!
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:27:14] "GET /1 HTTP/1.1" 200 -
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:27:14] "GET /static/css/main.css HTTP/1.1" 304 -
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:27:26] "GET /metrics HTTP/1.1" 200 -
-WARNING:werkzeug: * Running on all addresses.
+   Use a production WSGI server instead.
+ * Debug mode: off
+INFO:werkzeug: * Running on all addresses (0.0.0.0)
    WARNING: This is a development server. Do not use it in a production deployment.
-INFO:werkzeug: * Running on http://192.168.0.102:3111/ (Press CTRL+C to quit)
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:28:42] "GET /metrics HTTP/1.1" 200 -
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:28:54] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:28:54] "GET /static/css/main.css HTTP/1.1" 304 -
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:28:56] "GET /create HTTP/1.1" 200 -
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:28:56] "GET /static/css/main.css HTTP/1.1" 304 -
-INFO:root: New article created with title test
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:29:02] "POST /create HTTP/1.1" 302 -
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:29:02] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:29:02] "GET /static/css/main.css HTTP/1.1" 304 -
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:29:13] "GET /metrics HTTP/1.1" 200 -
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:29:25] "GET /10 HTTP/1.1" 404 -
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:29:25] "GET /static/css/main.css HTTP/1.1" 304 -
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:30:14] "GET /one HTTP/1.1" 404 -
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:31:43] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:31:43] "GET /static/css/main.css HTTP/1.1" 304 -
-INFO:root:About Us retrieved
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:31:45] "GET /about HTTP/1.1" 200 -
-INFO:werkzeug:192.168.0.102 - - [11/Oct/2022 18:31:45] "GET /static/css/main.css HTTP/1.1" 304 -
+ * Running on http://127.0.0.1:3111
+ * Running on http://172.17.0.2:3111 (Press CTRL+C to quit)
+INFO:werkzeug:172.17.0.1 - - [10/Apr/2022 07:45:20] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [10/Apr/2022 07:45:20] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:root:Article '2020 CNCF Annual Report' retrieved!
+INFO:werkzeug:172.17.0.1 - - [10/Apr/2022 07:45:27] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [10/Apr/2022 07:45:28] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:root:The 'About Us' page was retrieved!
+INFO:werkzeug:172.17.0.1 - - [10/Apr/2022 07:45:33] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [10/Apr/2022 07:45:34] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [10/Apr/2022 07:45:45] "GET /united-states HTTP/1.1" 404 -
+INFO:werkzeug:172.17.0.1 - - [10/Apr/2022 07:46:03] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [10/Apr/2022 07:46:04] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:root:Article 'Peace talks ongoing' was created!
+INFO:werkzeug:172.17.0.1 - - [10/Apr/2022 07:46:23] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:172.17.0.1 - - [10/Apr/2022 07:46:24] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [10/Apr/2022 07:46:24] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:root:Article 'Peace talks ongoing' retrieved!
+INFO:werkzeug:172.17.0.1 - - [10/Apr/2022 07:46:27] "GET /7 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [10/Apr/2022 07:46:28] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [10/Apr/2022 07:46:31] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [10/Apr/2022 07:46:31] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:root:Article 14 was not found!
+INFO:werkzeug:172.17.0.1 - - [10/Apr/2022 07:46:44] "GET /14 HTTP/1.1" 404 -
+INFO:werkzeug:172.17.0.1 - - [10/Apr/2022 07:46:45] "GET /static/css/main.css HTTP/1.1" 304 -

@@ -11,7 +11,7 @@ spec:
   source:
     helm:
       valueFiles:
-      - values-staging.yaml
-    path: helm
-    repoURL: https://github.com/zarexalvindaria/techtrends
+        - values-staging.yaml
+    path: project/helm
+    repoURL: https://github.com/barbietunnie/udacity-cloud-native-architecture
     targetRevision: HEAD

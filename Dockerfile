@@ -1,13 +1,14 @@
-FROM python:3.8
-LABEL maintainer="Toki Tazwar"
+# Set the base image
+FROM python:3.8-slim-buster
 
-COPY . /app
+LABEL mainitainer="Babatunde Adeyemi"
+
+COPY ./techtrends /app
 WORKDIR /app
-RUN pip install -r requirements.txt
 
-# create the database
+RUN pip install -r requirements.txt
 RUN python init_db.py
 
-# command to run on container start
-CMD [ "python", "app.py" ]
 EXPOSE 3111
+
+ENTRYPOINT ["python", "app.py"]
