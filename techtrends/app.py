@@ -12,18 +12,18 @@ app.config['SECRET_KEY'] = 'your secret key'
 # Capture any logs at the DEBUG level
 logging.basicConfig(level=logging.DEBUG)
 
-num_connections = 0
+db_connection_count = 0
 
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
 
 
 def get_db_connection():
-    global num_connections
+    global db_connection_count
 
     connection = sqlite3.connect('database.db')
     connection.row_factory = sqlite3.Row
-    num_connections = num_connections + 1
+    db_connection_count = db_connection_count + 1
     return connection
 
 # Function to get a post using its ID
@@ -98,8 +98,6 @@ def create():
             connection.close()
             logging.info(f" New article created with title {title}")
             return redirect(url_for('index'))
-            return redirect(url_for('index'))
-
     return render_template('create.html')
 
 
